@@ -8,7 +8,7 @@
 
 Toice - MP3 Trim and Save 
 
-
+Check the live Demo at: https://codename-samy.github.io/Toice/
 
 I thanks developers of following Libraries for their work;
     
