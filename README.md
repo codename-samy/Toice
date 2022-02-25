@@ -17,9 +17,11 @@ I thanks developers of following Libraries for their work;
     
  Special points to focus on: 
   1. Worker can now work on localHost.
-  2. Fuction to construct MP3 file from WAV file
-  3. Download Button can lead to multiple files.
-  4. Downloaded files must be generated as Output.mp3
+  2. Fuction to construct MP3 file from WAV file.
+  3. Time stamp have been changed from Milliseconds format to HH:MM:SS format.
+  4. Duration stamp have been classified as Start-Time and End-Time.
+  5. Download Button can lead to multiple files.
+  6. Downloaded files must be generated as Output.mp3
 
 This is an execution project that is performed while learning.
 This project consists of Encoding, Decoding, Transcoding, working with Blob and changing blob attributes.
