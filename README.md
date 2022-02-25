@@ -1,4 +1,7 @@
 # Toice
+
+https://github.com/codename-samy/Toice/blob/main/assets/logo.png?raw=true
+
 Toice - MP3 Trim and Save 
 I thanks developers of following Libraries for their work;
     1. Lame.js
