@@ -1,6 +1,8 @@
 # Toice
 
-https://github.com/codename-samy/Toice/blob/main/assets/logo.png?raw=true
+![Alt text](assets/logo.png?raw=true "Toice")
+
+
 
 Toice - MP3 Trim and Save 
 I thanks developers of following Libraries for their work;
