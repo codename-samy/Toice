@@ -4,8 +4,14 @@
 
 
 
+
+
 Toice - MP3 Trim and Save 
+
+
+
 I thanks developers of following Libraries for their work;
+    
     1. Lame.js
     2. Wavesurfer.js
     
