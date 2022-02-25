@@ -1,0 +1,128 @@
+* {
+    font-family: 'Lobster Two', cursive;
+    letter-spacing: 1px;
+}
+
+body {
+    overflow-x: hidden;
+    background: #000000;
+    background: -webkit-linear-gradient(to top, #434343, #000000);
+    background: linear-gradient(to top, #434343, #000000);
+}
+
+hr {
+    height: 3px;
+    background-color: #646464;
+    border-color: #ffffff;
+    border-style: dotted;
+    border-width: 1.5px;
+}
+
+.div {
+    height: 1.5px;
+    background-color: #000000;
+    border-color: #ff0000;
+    border-style: dotted;
+    border-width: 1.5px;
+    width: 500px;
+    border-radius: 50%;
+}
+
+header {}
+
+main {}
+
+footer {
+    position: initial;
+    bottom: 0;
+    width: 100%;
+    max-height: 25px;
+    background-color: rgb(255, 255, 255);
+}
+
+#readme {
+    background: #ffffff;
+    background: -webkit-linear-gradient(to top, #e9e9e9, #fdfdf2);
+    background: linear-gradient(to top, #dfdfdf, #fffff5);
+    width: fit-content;
+    margin: auto;
+    border-radius: 30px;
+    padding: 10px 10px;
+}
+
+.table {
+    border: 1px groove black;
+}
+
+#main-wrapper {
+    background: #fffc00;
+    background: -webkit-linear-gradient(to top, #ffffff, #fffc00);
+    background: linear-gradient(to top, #ffffff, #fffc00);
+    border-radius: 30px;
+    border-width: 2px;
+    border-style: double;
+    border-color: rgb(255, 6, 27);
+}
+
+
+/*--------------------------------------STYLING UPLOAD BUTTON--------------------------------------*/
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+    display: list-item;
+}
+
+.custom-file-input::before {
+    content: 'Browse an Audio File';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+.custom-file-input:hover::before {
+    border-color: black;
+    border-style: groove;
+}
+
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+
+/*-----------------------------------WAVEFORM AREA SECTION START-----------------------------------*/
+
+.waveform {
+    background-color: #e6870ae7;
+    border-radius: 30px;
+    border: 2px rgb(255, 0, 0) ridge;
+}
+
+
+/*----------------------------------Audio Track Table Styling----------------------------------------*/
+
+.audio-track-table {
+    border: 1px groove black;
+    border-spacing: 10px;
+    padding: 5px;
+}
+
+#audio-buttons {
+    width: 99%;
+}
+
+#time-current {
+    float: left;
+}
+
+#time-last {
+    float: right;
+}

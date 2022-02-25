@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toice</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<script src="wavesurfer.min.js"></script>
+<script src="wavesurfer.region.min.js"></script>
+<script src="actionhelper.js"></script>
+<script src="audio.js"></script>
+
+<body>
+
+    <header id="head">
+        <img src="assets/logo.png" alt="Coral Telecom Logo" style="width: 15%; margin-left: 100px; background-color: #ffffff; border-radius: 20px;" height="100px">
+        <hr>
+    </header>
+    <main id="main">
+        <div id="readme">
+            <center>
+                <h3 class="readme-heading" style="font-size: 32px;">Toice</h3>
+            </center>
+            <p class="readme-title">Steps to use :</p>
+            <ol class="readme-list">
+                <li>Click on Browse button to Select an Audio Recording in .MP3 format.</li>
+                <li>Choose Play and Pause button to audio of selected Recording file.</li>
+                <li>To Trim a Recording File : <br>
+                    <ul>
+                        <li>On upload of Recording file A waveform will appear.</li>
+                        <li>On the waveform at a point, Double click to select the Start-Time and drag till End-Point, where recording need to end.</li>
+                        <li>Leave the click, to load the selected part on the table.</li>
+                        <li>After new Recording is loaded you can able to Play, Download or Delete the mentioned Recording as per requirements.</li>
+                        <li><strong>Kindly Note:</strong> Download can take some time depending on file size, Your Patience is appreciated !!!</li>
+                    </ul>
+                </li>
+                <li>Click Browse button to start from the beginning.</li>
+            </ol>
+            <br>
+        </div>
+        <hr>
+        <div id="main-wrapper">
+            <center>
+                <div id="upload">
+                    <br>
+                    <input id="audio-file" class="custom-file-input" type="file" name="audio-file" onchange="loadAudio()">
+                    <br>
+                </div>
+
+                <div id="mediainfo">
+                    <br><br>
+                    <table class="table" id="file-info">
+                        <tr>
+                            <th class="table-head"><u>Recording Date and Time</u></th>
+                            <td>|</td>
+                            <td class="table-data">
+                                <p id="date"></p>
+                            </td>
+                        </tr>
+                        <tr style="display: none; font-size: 0px;">
+                            <th class="table-head"><u>Start Time</u></th>
+                            <td>|</td>
+                            <td class="table-data">
+                                <p id="start-time"></p>
+                            </td>
+                        </tr>
+                        <tr style="display: none; font-size: 0px;">
+                            <th class="table-head"><u>Total Duration</u></th>
+                            <td>|</td>
+                            <td class="table-data">
+                                <p id="total-duration"></p>
+                            </td>
+
+                        </tr>
+                        <tr style="display: none; font-size: 0px;">
+                            <th><u>End Time</u></th>
+                            <td>|</td>
+                            <td>
+                                <p id="end-time"></p>
+                            </td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <hr class="div">
+                </div>
+                <div id="content">
+                    <!--------------------------------WAVEFORM AREA SECTION START------------------------------------>
+
+                    <br><br>
+                    <div id="waveform" class="waveform">
+                    </div>
+                    <br>
+
+                    <!--------------------------------WAVEFORM AREA SECTION STOP------------------------------------>
+
+                    <!--------------------------------BUTTON AND TIME  AREA SECTION START------------------------------------>
+
+
+
+                    <div class="w3-half w3-container w3-hide" id="audio-buttons">
+                        <b id="time-current">00:00:00</b>
+                        <b id="time-total">00:00:00</b>
+                        <b id="time-last">00:00:00</b>
+                        <br><br>
+                        <button id="play-pause-icon" onClick="playAndPause()">
+                        Play-Pause
+                    </button>
+                    </div>
+                    <br><br>
+                    <hr class="div">
+
+                    <!--------------------------------BUTTON AND TIME AREA SECTION STOP------------------------------------>
+
+                    <!--------------------------------AUDIO TRACKS AREA SECTION START------------------------------------>
+
+                    <br>
+                    <div>
+                        <table class="audio-track-table" id="audio-tracks">
+                            <thead>
+                                <tr class="audio-track-table-row">
+                                    <th></th>
+                                    <th>Start Duration</th>
+                                    <th>End Duration</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                            <tfoot></tfoot>
+                        </table>
+                    </div>
+                    <br>
+                    <div id="blocked" style="display: none;">
+                        <div id="merge-option" class="w3-hide">
+                            <button class="w3-button w3-border w3-border-teal w3-round-xlarge" onClick="mergeTrack()">
+                            <i>Merge tracks</i>
+                    </button>
+                            <br><br>
+                            <div class="w3-row w3-hide" id="merged-track-div">
+                                <b class="w3-col l1 w3-text-olive"><i>Merged Audio : </i></b>
+                                <audio controls="controls" class="w3-col l11" id="merged-track">
+                                <source src="" type="">
+                        </audio>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--------------------------------AUDIO TRACKS AREA SECTION STOP------------------------------------>
+                </div>
+            </center>
+        </div>
+    </main>
+    <hr>
+    <footer style="letter-spacing: 2px;">
+        <center>
+            <strong><em>Toice</em></strong> have been Developed & Designed by : <a href="https://github.com/codename-samy">codename-Samy</a>
+        </center>
+    </footer>
+
+</body>
+
+</html>
